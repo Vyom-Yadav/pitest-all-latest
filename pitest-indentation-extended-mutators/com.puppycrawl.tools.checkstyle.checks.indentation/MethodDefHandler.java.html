@@ -1,0 +1,2826 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>MethodDefHandler.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>///////////////////////////////////////////////////////////////////////////////////////////////</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// checkstyle: Checks Java source code and other text files for adherence to a set of rules.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Copyright (C) 2001-2022 the original author or authors.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// This library is free software; you can redistribute it and/or</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// modify it under the terms of the GNU Lesser General Public</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// License as published by the Free Software Foundation; either</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// version 2.1 of the License, or (at your option) any later version.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// This library is distributed in the hope that it will be useful,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Lesser General Public License for more details.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// You should have received a copy of the GNU Lesser General Public</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// License along with this library; if not, write to the Free Software</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>///////////////////////////////////////////////////////////////////////////////////////////////</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.puppycrawl.tools.checkstyle.checks.indentation;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.api.DetailAST;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.api.TokenTypes;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Handler for method definitions.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class MethodDefHandler extends BlockParentHandler {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Construct an instance of this handler with the given indentation check,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * abstract syntax tree, and parent handler.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param indentCheck   the indentation check</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param ast           the abstract syntax tree</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param parent        the parent handler</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public MethodDefHandler(IndentationCheck indentCheck,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        DetailAST ast, AbstractExpressionHandler parent) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_41'/>
+41
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_41'>1</a>
+<span>
+1. &#60;init&#62; : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getHandlerName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        super(indentCheck, getHandlerName(ast), ast, parent);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    protected DetailAST getTopLevelAst() {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // we check this stuff ourselves below</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_47'/>
+47
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_47'>1</a>
+<span>
+1. getTopLevelAst : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return null;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    protected void checkModifiers() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_52'/>
+52
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_52'>3</a>
+<span>
+1. checkModifiers : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED<br/>
+2. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED<br/>
+3. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        final DetailAST modifier = getMainAst().findFirstToken(TokenTypes.MODIFIERS);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_53'/>
+53
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_53'>3</a>
+<span>
+1. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::isOnStartOfLine &rarr; KILLED<br/>
+2. checkModifiers : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. checkModifiers : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (isOnStartOfLine(modifier)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_54'/>
+54
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_54'>5</a>
+<span>
+1. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getIndent &rarr; KILLED<br/>
+2. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::expandedTabsColumnNo &rarr; KILLED<br/>
+3. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/IndentLevel::isAcceptable &rarr; KILLED<br/>
+4. checkModifiers : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+5. checkModifiers : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            &#38;&#38; !getIndent().isAcceptable(expandedTabsColumnNo(modifier))) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_55'/>
+55
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_55'>1</a>
+<span>
+1. checkModifiers : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::expandedTabsColumnNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            logError(modifier, &#34;modifier&#34;, expandedTabsColumnNo(modifier));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Check the indentation level of the throws clause.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private void checkThrows() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_63'/>
+63
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_63'>3</a>
+<span>
+1. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED<br/>
+2. checkThrows : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED<br/>
+3. checkThrows : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        final DetailAST throwsAst = getMainAst().findFirstToken(TokenTypes.LITERAL_THROWS);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_65'/>
+65
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_65'>2</a>
+<span>
+1. checkThrows : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+2. checkThrows : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (throwsAst != null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_66'/>
+66
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_66'>3</a>
+<span>
+1. checkThrows : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling &rarr; KILLED<br/>
+2. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getIndentCheck &rarr; KILLED<br/>
+3. checkThrows : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            checkWrappingIndentation(throwsAst, throwsAst.getNextSibling(), getIndentCheck()</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_67'/>
+67
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_67'>5</a>
+<span>
+1. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/IndentationCheck::getThrowsIndent &rarr; KILLED<br/>
+2. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED<br/>
+3. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefLineStart &rarr; KILLED<br/>
+4. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getLineStart &rarr; KILLED<br/>
+5. checkThrows : replaced call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getLineStart with argument &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    .getThrowsIndent(), getLineStart(getMethodDefLineStart(getMainAst())),</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_68'/>
+68
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_68'>3</a>
+<span>
+1. checkThrows : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::isOnStartOfLine &rarr; KILLED<br/>
+2. checkThrows : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+3. checkThrows : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                    !isOnStartOfLine(throwsAst));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Gets the start line of the method, excluding any annotations. This is required because the</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * current {@link TokenTypes#METHOD_DEF} may not always be the start as seen in</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * https://github.com/checkstyle/checkstyle/issues/3145.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param mainAst</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *            The method definition ast.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return The start column position of the method.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static int getMethodDefLineStart(DetailAST mainAst) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // get first type position</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_83'/>
+83
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_83'>3</a>
+<span>
+1. getMethodDefLineStart : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED<br/>
+2. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED<br/>
+3. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getLineNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        int lineStart = mainAst.findFirstToken(TokenTypes.IDENT).getLineNo();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // check if there is a type before the indent</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_86'/>
+86
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_86'>2</a>
+<span>
+1. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; SURVIVED<br/>
+2. getMethodDefLineStart : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        final DetailAST typeNode = mainAst.findFirstToken(TokenTypes.TYPE);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_87'/>
+87
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_87'>2</a>
+<span>
+1. getMethodDefLineStart : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+2. getMethodDefLineStart : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (typeNode != null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_88'/>
+88
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_88'>1</a>
+<span>
+1. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getFirstLine &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            lineStart = getFirstLine(typeNode);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // check if there is a modifier before the type</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_92'/>
+92
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_92'>4</a>
+<span>
+1. getMethodDefLineStart : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED<br/>
+2. getMethodDefLineStart : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild with receiver &rarr; SURVIVED<br/>
+3. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED<br/>
+4. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        for (DetailAST node = mainAst.findFirstToken(TokenTypes.MODIFIERS).getFirstChild();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_93'/>
+93
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_93'>2</a>
+<span>
+1. getMethodDefLineStart : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+2. getMethodDefLineStart : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                node != null;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_94'/>
+94
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_94'>2</a>
+<span>
+1. getMethodDefLineStart : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling with receiver &rarr; TIMED_OUT<br/>
+2. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                node = node.getNextSibling()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            // skip annotations as we check them else where as outside the method</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_96'/>
+96
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_96'>3</a>
+<span>
+1. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getType &rarr; SURVIVED<br/>
+2. getMethodDefLineStart : removed conditional - replaced equality check with false &rarr; SURVIVED<br/>
+3. getMethodDefLineStart : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>            if (node.getType() == TokenTypes.ANNOTATION) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                continue;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_100'/>
+100
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_100'>3</a>
+<span>
+1. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getLineNo &rarr; KILLED<br/>
+2. getMethodDefLineStart : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+3. getMethodDefLineStart : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            if (node.getLineNo() &#60; lineStart) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_101'/>
+101
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_101'>1</a>
+<span>
+1. getMethodDefLineStart : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getLineNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                lineStart = node.getLineNo();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_105'/>
+105
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_105'>2</a>
+<span>
+1. getMethodDefLineStart : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; KILLED<br/>
+2. getMethodDefLineStart : replaced int return with 0 for com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefLineStart &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return lineStart;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void checkIndentation() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        checkModifiers();</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        checkThrows();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_113'/>
+113
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_113'>5</a>
+<span>
+1. checkIndentation : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED<br/>
+2. checkIndentation : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen &rarr; KILLED<br/>
+3. checkIndentation : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. checkIndentation : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. checkIndentation : replaced call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen with argument &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (getMethodDefParamRightParen(getMainAst()) != null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_114'/>
+114
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_114'>4</a>
+<span>
+1. checkIndentation : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED<br/>
+2. checkIndentation : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED<br/>
+3. checkIndentation : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen &rarr; KILLED<br/>
+4. checkIndentation : replaced call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen with argument &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            checkWrappingIndentation(getMainAst(), getMethodDefParamRightParen(getMainAst()));</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        // abstract method def -- no body</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_117'/>
+117
+</td>
+<td class='survived'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_117'>3</a>
+<span>
+1. checkIndentation : removed conditional - replaced equality check with true &rarr; SURVIVED<br/>
+2. checkIndentation : removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getLeftCurly &rarr; KILLED<br/>
+3. checkIndentation : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='survived'>        if (getLeftCurly() != null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            super.checkIndentation();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_121'/>
+121
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_121'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns right parenthesis of method definition parameter list.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param methodDefAst</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *          method definition ast node(TokenTypes.LITERAL_IF)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return right parenthesis of method definition parameter list.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static DetailAST getMethodDefParamRightParen(DetailAST methodDefAst) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_130'/>
+130
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_130'>4</a>
+<span>
+1. getMethodDefParamRightParen : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getMethodDefParamRightParen : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED<br/>
+3. getMethodDefParamRightParen : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; KILLED<br/>
+4. getMethodDefParamRightParen : replaced return value with null for com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return methodDefAst.findFirstToken(TokenTypes.RPAREN);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Creates a handler name for this class according to ast type.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param ast the abstract syntax tree.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return handler name for this class.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static String getHandlerName(DetailAST ast) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        final String name;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_142'/>
+142
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_142'>5</a>
+<span>
+1. getHandlerName : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getType &rarr; KILLED<br/>
+2. getHandlerName : RemoveSwitch 0 mutation &rarr; KILLED<br/>
+3. getHandlerName : RemoveSwitch 1 mutation &rarr; KILLED<br/>
+4. getHandlerName : RemoveSwitch 2 mutation &rarr; KILLED<br/>
+5. getHandlerName : Changed switch default to be first case &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        switch (ast.getType()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case TokenTypes.CTOR_DEF:</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                name = &#34;ctor def&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                break;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case TokenTypes.ANNOTATION_FIELD_DEF:</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                name = &#34;annotation field def&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                break;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            case TokenTypes.COMPACT_CTOR_DEF:</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                name = &#34;compact ctor def&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                break;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            default:</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                name = &#34;method def&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_155'/>
+155
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_155'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_156'/>
+156
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_156'>2</a>
+<span>
+1. getHandlerName : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getHandlerName : replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getHandlerName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return name;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_158'/>
+158
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_158'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@c119590_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@c119590_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_41'>41</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_41'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getHandlerName &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_47'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getTopLevelAst<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_52'>52</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_52'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_53'>53</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_53'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationAnnotationFieldDefinition</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::isOnStartOfLine &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationAnnotationFieldDefinition</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationOddStyles</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_54'>54</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_54'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getIndent &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::expandedTabsColumnNo &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/IndentLevel::isAcceptable &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationAnnotationFieldDefinition</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_55'>55</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_55'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkModifiers<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationAnnotationFieldDefinition</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::expandedTabsColumnNo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_63'>63</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_63'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_65'>65</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_65'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_66'>66</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_66'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getIndentCheck &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_67'>67</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_67'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/IndentationCheck::getThrowsIndent &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefLineStart &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getLineStart &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> replaced call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getLineStart with argument &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_68'>68</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_68'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::isOnStartOfLine &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidNewKeywordWithForceStrictCondition</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkThrows<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_83'>83</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_83'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getLineNo &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_86'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_87'>87</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_87'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_88'>88</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_88'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getFirstLine &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_92'>92</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_92'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild with receiver &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_93'>93</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_93'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_94'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling with receiver &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_96'>96</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_96'/> 
+
+<p class='SURVIVED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getType &rarr; SURVIVED</p> <p class='SURVIVED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with false &rarr; SURVIVED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_100'>100</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_100'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getLineNo &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_101'>101</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_101'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getLineNo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_105'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefLineStart<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel</span></span> replaced int return with 0 for com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefLineStart &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_113'>113</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_113'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.forbidOldStyle</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.forbidOldStyle</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationRecordsAndCompactCtors</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationRecordsAndCompactCtors</span></span> replaced call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen with argument &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_114'>114</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_114'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMainAst &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> replaced call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen with argument &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_117'>117</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_117'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getLeftCurly &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='SURVIVED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>checkIndentation<br/><b>Killed by : </b>none</span></span> removed conditional - replaced equality check with true &rarr; SURVIVED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_130'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getMethodDefParamRightParen<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.forbidOldStyle</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getMethodDefParamRightParen<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::findFirstToken with receiver &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getMethodDefParamRightParen<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getMethodDefParamRightParen<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.forbidOldStyle</span></span> replaced return value with null for com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getMethodDefParamRightParen &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_142'>142</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_142'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTabs</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getType &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTabs</span></span> RemoveSwitch 0 mutation &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationAnnotationFieldDefinition</span></span> RemoveSwitch 1 mutation &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationRecordsAndCompactCtors</span></span> RemoveSwitch 2 mutation &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine</span></span> Changed switch default to be first case &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@c119590_156'>156</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@c119590_156'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getHandlerName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine</span></span> replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/indentation/MethodDefHandler::getHandlerName &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testSwitchCustom (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidMethodWithChecker (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationOddStyles (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidLabel (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidNewKeywordWithForceStrictCondition (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidBlockWithChecker (13 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidArrayInitWithTrueStrictCondition (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testCtorCall (23 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.forbidOldStyle (18 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambda2 (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationYieldStatement (16 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTryHandler (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidInterfaceDefWithChecker (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIfElseWithNoCurly (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testWhileWithNoCurly (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnonymousClasses (13 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidClassDefWithChecker (23 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testThrowsIndentationLevel2 (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testBraceAdjustment (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testChainedMethodCalling (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testZeroAnnotationArrayInit (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTwoStatementsPerLine (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidArrayInitWithChecker (13 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testMultipleAnnotationsWithWrappedLines (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testNewKeyword (10 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidDotWithChecker (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidWhileWithChecker (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testSynchronizedStatement (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambda3 (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidInvalidAnonymousClass (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testForWithNoCurly (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationLongConcatenatedString (2573 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidNewKeywordWithForceStrictCondition (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationArrayInitGoodCase (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidSwitchWithChecker (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidArrayInitDefaultIndentWithChecker (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine1 (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambdaFalseForceStrictCondition (10 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTryResourcesNotStrict (18 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidArrayInit (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationAnnotationFieldDefinition (19 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidSwitchWithChecker (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidIfWithChecker (17 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationSwitchExpression (99 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidBlockWithChecker (24 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnonClassesFromGuava (30 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationRecordsAndCompactCtors (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testNewHandler (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidAssignWithChecker (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTryResourcesStrict (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testCaseLevel (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidMethodWithChecker (28 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambda1 (77 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambdaTrueForceStrictCondition (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationSwitchExpressionDeclaration (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidAssignWithChecker (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidLabelWithWhileLoop (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationArrayInitWithEmoji (12 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationLineBreakVariableDeclaration (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testMembers (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testOddAnnotations (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testMethodChaining (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTryResources (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidClassDefWithChecker (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testStrictCondition (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambdaOddConditions (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationArrayInitTwo (23 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotations (45 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidTryWithChecker (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationArrayInitGoodCaseTwo (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testChainedMethodWithBracketOnNewLine (15 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationArrayInit (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.test15Extensions (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidCommaWithChecker (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationIncorrect (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidDoWhileWithChecker (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLabels (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testEmptyArray (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testZeroCaseLevel (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationMethodParenthesisOnNewLine (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidIfWithChecker (10 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTryHandler2 (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testCorrectIfAndParameters (18 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationSwitchExpressionCorrect (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testTabs (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidLabel (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidForWithChecker (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInputAnnotationDefIndentationCheck (21 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnnotationClosingParenthesisEndsInSameIndentationAsOpening (13 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testArrayInitWithEmoji (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testMethodCallLineWrap (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testArrays (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testSynchronizedMethod (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidTryWithChecker (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testMethodPrecedeByAnnotationsWithParameterOnSeparateLine (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidArrayInitWithChecker (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnonymousClassInMethod (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambda4 (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testClassesAndMethods (12 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationLevel (13 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testDoWhileWithoutCurly (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInputAnnotationScopeIndentationCheck (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testNewKeyword2 (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAnonymousClassInMethodWithCurlyOnNewLine (25 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testValidDoWhileWithChecker (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidWhileWithChecker (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testDifficultAnnotations (13 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testInvalidForWithChecker (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationSwitchExpressionNewLine (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationLineWrappedRecordDeclaration (18 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAlternativeGoogleStyleSwitchCaseAndEnums (14 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testIndentationRecords (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testLambda5 (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheckTest.testAndroidStyle (9 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.9.3
+
+</body>
+</html>
