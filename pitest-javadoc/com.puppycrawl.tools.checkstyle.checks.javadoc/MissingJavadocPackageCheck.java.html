@@ -1,0 +1,2695 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>MissingJavadocPackageCheck.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>///////////////////////////////////////////////////////////////////////////////////////////////</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// checkstyle: Checks Java source code and other text files for adherence to a set of rules.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Copyright (C) 2001-2022 the original author or authors.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// This library is free software; you can redistribute it and/or</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// modify it under the terms of the GNU Lesser General Public</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// License as published by the Free Software Foundation; either</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// version 2.1 of the License, or (at your option) any later version.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// This library is distributed in the hope that it will be useful,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Lesser General Public License for more details.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// You should have received a copy of the GNU Lesser General Public</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// License along with this library; if not, write to the Free Software</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>///////////////////////////////////////////////////////////////////////////////////////////////</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.puppycrawl.tools.checkstyle.checks.javadoc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.util.Optional;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.StatelessCheck;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.api.AbstractCheck;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.api.DetailAST;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.api.TokenTypes;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.utils.CheckUtil;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import com.puppycrawl.tools.checkstyle.utils.JavadocUtil;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Checks for missing Javadoc comments in package-info.java files.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Rationale: description and other related documentation for a package can be written up</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * in the package-info.java file and it gets used in the production of the Javadocs.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * See &#60;a</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * href=&#34;https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#packagecomment&#34;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#62;link&#60;/a&#62; for more info.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * To configure the check:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_45'/>
+45
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_45'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;pre&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_46'/>
+46
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_46'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#38;lt;module name=&#34;MissingJavadocPackage&#34;/&#38;gt;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_47'/>
+47
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_47'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/pre&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_48'/>
+48
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_48'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;p&#62;Example:&#60;/p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;pre&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * * Provides API classes</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * *&#38;#47;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * package com.checkstyle.api; // no violation</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * /*</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * * Block comment is not a javadoc</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * *&#38;#47;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * package com.checkstyle.api; // violation</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/pre&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Parent is {@code com.puppycrawl.tools.checkstyle.TreeWalker}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Violation Message Keys:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/p&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;ul&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;li&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * {@code package.javadoc.missing}</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_68'/>
+68
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_68'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/li&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * &#60;/ul&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * @since 8.22</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>@StatelessCheck</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class MissingJavadocPackageCheck extends AbstractCheck {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_77'/>
+77
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_77'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * A key is pointing to the warning message text in &#34;messages.properties&#34;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * file.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static final String MSG_PKG_JAVADOC_MISSING = &#34;package.javadoc.missing&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int[] getDefaultTokens() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_84'/>
+84
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_84'>4</a>
+<span>
+1. getDefaultTokens : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getDefaultTokens : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens &rarr; KILLED<br/>
+3. getDefaultTokens : mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getDefaultTokens to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. getDefaultTokens : replaced return value with null for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getDefaultTokens &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return getRequiredTokens();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_86'/>
+86
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_86'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int[] getAcceptableTokens() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_89'/>
+89
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_89'>4</a>
+<span>
+1. getAcceptableTokens : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getAcceptableTokens : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens &rarr; KILLED<br/>
+3. getAcceptableTokens : mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getAcceptableTokens to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. getAcceptableTokens : replaced return value with null for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getAcceptableTokens &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return getRequiredTokens();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int[] getRequiredTokens() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_94'/>
+94
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_94'>3</a>
+<span>
+1. getRequiredTokens : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getRequiredTokens : mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. getRequiredTokens : replaced return value with null for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return new int[] {TokenTypes.PACKAGE_DEF};</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_95'/>
+95
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_95'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isCommentNodesRequired() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_99'/>
+99
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_99'>2</a>
+<span>
+1. isCommentNodesRequired : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isCommentNodesRequired : replaced boolean return with false for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isCommentNodesRequired &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return true;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_100'/>
+100
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_100'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public void visitToken(DetailAST ast) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_104'/>
+104
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_104'>9</a>
+<span>
+1. visitToken : negated conditional &rarr; KILLED<br/>
+2. visitToken : negated conditional &rarr; KILLED<br/>
+3. visitToken : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getFilePath &rarr; KILLED<br/>
+4. visitToken : removed call to com/puppycrawl/tools/checkstyle/utils/CheckUtil::isPackageInfo &rarr; KILLED<br/>
+5. visitToken : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadoc &rarr; KILLED<br/>
+6. visitToken : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+7. visitToken : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+8. visitToken : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+9. visitToken : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (CheckUtil.isPackageInfo(getFilePath()) &#38;&#38; !hasJavadoc(ast)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_105'/>
+105
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_105'>1</a>
+<span>
+1. visitToken : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::log &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            log(ast, MSG_PKG_JAVADOC_MISSING);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that there is javadoc before ast.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Because of &#60;a href=&#34;https://github.com/checkstyle/checkstyle/issues/4392&#34;&#62;parser bug&#60;/a&#62;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_112'/>
+112
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_112'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * parser can place javadoc comment either as previous sibling of package definition</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * or (if there is annotation between package def and javadoc) inside package definition tree.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * So we should look for javadoc in both places.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param ast {@link TokenTypes#PACKAGE_DEF} token to check</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return true if there is javadoc, false otherwise</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static boolean hasJavadoc(DetailAST ast) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_120'/>
+120
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_120'>5</a>
+<span>
+1. hasJavadoc : negated conditional &rarr; KILLED<br/>
+2. hasJavadoc : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling &rarr; KILLED<br/>
+3. hasJavadoc : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. hasJavadoc : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. hasJavadoc : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        final boolean hasJavadocBefore = ast.getPreviousSibling() != null</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_121'/>
+121
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_121'>6</a>
+<span>
+1. hasJavadoc : negated conditional &rarr; KILLED<br/>
+2. hasJavadoc : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling &rarr; KILLED<br/>
+3. hasJavadoc : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isJavadoc &rarr; KILLED<br/>
+4. hasJavadoc : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+5. hasJavadoc : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+6. hasJavadoc : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            &#38;&#38; isJavadoc(ast.getPreviousSibling());</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_122'/>
+122
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_122'>9</a>
+<span>
+1. hasJavadoc : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. hasJavadoc : negated conditional &rarr; KILLED<br/>
+3. hasJavadoc : negated conditional &rarr; KILLED<br/>
+4. hasJavadoc : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadocAboveAnnotation &rarr; KILLED<br/>
+5. hasJavadoc : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+6. hasJavadoc : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+7. hasJavadoc : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+8. hasJavadoc : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+9. hasJavadoc : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadoc &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return hasJavadocBefore || hasJavadocAboveAnnotation(ast);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks javadoc existence in annotations list.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param ast package def</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return true if there is a javadoc, false otherwise</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_130'/>
+130
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_130'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static boolean hasJavadocAboveAnnotation(DetailAST ast) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_132'/>
+132
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_132'>3</a>
+<span>
+1. hasJavadocAboveAnnotation : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild &rarr; KILLED<br/>
+2. hasJavadocAboveAnnotation : removed call to java/util/Optional::of &rarr; KILLED<br/>
+3. hasJavadocAboveAnnotation : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        final Optional&#60;DetailAST&#62; firstAnnotationChild = Optional.of(ast.getFirstChild())</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_133'/>
+133
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_133'>2</a>
+<span>
+1. hasJavadocAboveAnnotation : removed call to java/util/Optional::map &rarr; KILLED<br/>
+2. hasJavadocAboveAnnotation : replaced call to java/util/Optional::map with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            .map(DetailAST::getFirstChild)</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_134'/>
+134
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_134'>2</a>
+<span>
+1. hasJavadocAboveAnnotation : removed call to java/util/Optional::map &rarr; KILLED<br/>
+2. hasJavadocAboveAnnotation : replaced call to java/util/Optional::map with receiver &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            .map(DetailAST::getFirstChild);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        boolean result = false;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_136'/>
+136
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_136'>4</a>
+<span>
+1. hasJavadocAboveAnnotation : negated conditional &rarr; KILLED<br/>
+2. hasJavadocAboveAnnotation : removed call to java/util/Optional::isPresent &rarr; KILLED<br/>
+3. hasJavadocAboveAnnotation : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. hasJavadocAboveAnnotation : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (firstAnnotationChild.isPresent()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_137'/>
+137
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_137'>4</a>
+<span>
+1. hasJavadocAboveAnnotation : negated conditional &rarr; KILLED<br/>
+2. hasJavadocAboveAnnotation : removed call to java/util/Optional::get &rarr; KILLED<br/>
+3. hasJavadocAboveAnnotation : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. hasJavadocAboveAnnotation : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            for (DetailAST child = firstAnnotationChild.get(); child != null;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_138'/>
+138
+</td>
+<td class='uncertain'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_138'>2</a>
+<span>
+1. hasJavadocAboveAnnotation : replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling with receiver &rarr; TIMED_OUT<br/>
+2. hasJavadocAboveAnnotation : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='uncertain'>                 child = child.getNextSibling()) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_139'/>
+139
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_139'>4</a>
+<span>
+1. hasJavadocAboveAnnotation : negated conditional &rarr; KILLED<br/>
+2. hasJavadocAboveAnnotation : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isJavadoc &rarr; KILLED<br/>
+3. hasJavadocAboveAnnotation : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. hasJavadocAboveAnnotation : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>                if (isJavadoc(child)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_140'/>
+140
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_140'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    result = true;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>                    break;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_145'/>
+145
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_145'>3</a>
+<span>
+1. hasJavadocAboveAnnotation : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. hasJavadocAboveAnnotation : replaced boolean return with false for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadocAboveAnnotation &rarr; KILLED<br/>
+3. hasJavadocAboveAnnotation : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadocAboveAnnotation &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return result;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_149'/>
+149
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_149'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that ast is a javadoc comment.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param ast token to check</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return true if ast is a javadoc comment, false otherwise</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private static boolean isJavadoc(DetailAST ast) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_155'/>
+155
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_155'>10</a>
+<span>
+1. isJavadoc : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isJavadoc : negated conditional &rarr; KILLED<br/>
+3. isJavadoc : negated conditional &rarr; KILLED<br/>
+4. isJavadoc : removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getType &rarr; KILLED<br/>
+5. isJavadoc : removed call to com/puppycrawl/tools/checkstyle/utils/JavadocUtil::isJavadocComment &rarr; KILLED<br/>
+6. isJavadoc : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+7. isJavadoc : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+8. isJavadoc : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+9. isJavadoc : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+10. isJavadoc : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isJavadoc &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return ast.getType() == TokenTypes.BLOCK_COMMENT_BEGIN &#38;&#38; JavadocUtil.isJavadocComment(ast);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_156'/>
+156
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_156'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@76eb7e73_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_84'>84</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_84'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getDefaultTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getDefaultTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getDefaultTokens to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getDefaultTokens<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getDefaultTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> replaced return value with null for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getDefaultTokens &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_89'>89</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_89'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getAcceptableTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getAcceptableTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getAcceptableTokens to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getAcceptableTokens<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getAcceptableTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> replaced return value with null for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getAcceptableTokens &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_94'>94</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_94'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getRequiredTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getRequiredTokens<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getRequiredTokens<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect</span></span> replaced return value with null for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getRequiredTokens &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_99'>99</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_99'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isCommentNodesRequired<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isCommentNodesRequired<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> replaced boolean return with false for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isCommentNodesRequired &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_104'>104</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_104'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::getFilePath &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> removed call to com/puppycrawl/tools/checkstyle/utils/CheckUtil::isPackageInfo &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadoc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testNotPackageInfo</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_105'>105</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_105'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>visitToken<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::log &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_120'>120</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_120'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithHeader</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithHeader</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_121'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isJavadoc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getPreviousSibling with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_122'>122</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_122'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadocAboveAnnotation &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>hasJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadoc &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_132'>132</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_132'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed call to java/util/Optional::of &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getFirstChild with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_133'>133</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_133'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed call to java/util/Optional::map &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> replaced call to java/util/Optional::map with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_134'>134</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_134'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed call to java/util/Optional::map &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> replaced call to java/util/Optional::map with receiver &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_136'>136</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_136'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed call to java/util/Optional::isPresent &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_137'>137</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_137'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed call to java/util/Optional::get &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithAnnotationAndBlockComment</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_138'>138</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_138'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling &rarr; KILLED</p> <p class='TIMED_OUT'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>none</span></span> replaced call to com/puppycrawl/tools/checkstyle/api/DetailAST::getNextSibling with receiver &rarr; TIMED_OUT</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_139'>139</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_139'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithAnnotationAndBlockComment</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isJavadoc &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithAnnotationAndBlockComment</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_145'>145</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_145'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation</span></span> replaced boolean return with false for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadocAboveAnnotation &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>hasJavadocAboveAnnotation<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::hasJavadocAboveAnnotation &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@76eb7e73_155'>155</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@76eb7e73_155'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/api/DetailAST::getType &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed call to com/puppycrawl/tools/checkstyle/utils/JavadocUtil::isJavadocComment &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>isJavadoc<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/MissingJavadocPackageCheck::isJavadoc &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithBlankLines (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageSingleLineJavadocPresent (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithHeader (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testBlockCommentInsteadOfJavadoc (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc2 (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresent (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testNotPackageInfo (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithAnnotation (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissing (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithBlankLines (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingDetachedJavadoc (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocPresentWithAnnotation (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testPackageJavadocMissingWithAnnotationAndBlockComment (2 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testTokensAreCorrect (0 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.MissingJavadocPackageCheckTest.testSinglelineCommentInsteadOfJavadoc (7 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.9.3
+
+</body>
+</html>

@@ -1,0 +1,2792 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>JavadocTag.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>///////////////////////////////////////////////////////////////////////////////////////////////</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// checkstyle: Checks Java source code and other text files for adherence to a set of rules.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Copyright (C) 2001-2022 the original author or authors.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// This library is free software; you can redistribute it and/or</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// modify it under the terms of the GNU Lesser General Public</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// License as published by the Free Software Foundation; either</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// version 2.1 of the License, or (at your option) any later version.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// This library is distributed in the hope that it will be useful,</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// but WITHOUT ANY WARRANTY; without even the implied warranty of</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Lesser General Public License for more details.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>//</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// You should have received a copy of the GNU Lesser General Public</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// License along with this library; if not, write to the Free Software</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>///////////////////////////////////////////////////////////////////////////////////////////////</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.puppycrawl.tools.checkstyle.checks.javadoc;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Represents a Javadoc tag. Provides methods to query what type of tag it is.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public class JavadocTag {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** The line number of the tag. **/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final int lineNo;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** The column number of the tag. **/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final int columnNo;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** An optional first argument. For example the parameter name. **/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final String firstArg;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /** The JavadocTagInfo representing this tag. **/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    private final JavadocTagInfo tagInfo;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_36'/>
+36
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_36'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_37'/>
+37
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_37'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Constructs the object.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param line the line number of the tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_40'/>
+40
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_40'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param column the column number of the tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param tag the tag string</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param firstArg the tag argument</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     **/</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    public JavadocTag(int line, int column, String tag, String firstArg) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_45'/>
+45
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_45'>1</a>
+<span>
+1. &#60;init&#62; : Removed assignment to member variable lineNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        lineNo = line;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_46'/>
+46
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_46'>1</a>
+<span>
+1. &#60;init&#62; : Removed assignment to member variable columnNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        columnNo = column;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_47'/>
+47
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_47'>1</a>
+<span>
+1. &#60;init&#62; : Removed assignment to member variable firstArg &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        this.firstArg = firstArg;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_48'/>
+48
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_48'>2</a>
+<span>
+1. &#60;init&#62; : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo::fromName &rarr; KILLED<br/>
+2. &#60;init&#62; : Removed assignment to member variable tagInfo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        tagInfo = JavadocTagInfo.fromName(tag);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_49'/>
+49
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_49'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_50'/>
+50
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_50'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_51'/>
+51
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_51'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_52'/>
+52
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_52'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Constructs the object.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_53'/>
+53
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_53'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_54'/>
+54
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_54'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param line the line number of the tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_55'/>
+55
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_55'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param column the column number of the tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_56'/>
+56
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_56'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param tag the tag string</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_57'/>
+57
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_57'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     **/</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_58'/>
+58
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_58'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public JavadocTag(int line, int column, String tag) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_59'/>
+59
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_59'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>        this(line, column, tag, null);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_60'/>
+60
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_60'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_61'/>
+61
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_61'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_62'/>
+62
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_62'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_63'/>
+63
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_63'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Gets tag name.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_64'/>
+64
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_64'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_65'/>
+65
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_65'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return the tag string</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_66'/>
+66
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_66'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_67'/>
+67
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_67'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getTagName() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_68'/>
+68
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_68'>4</a>
+<span>
+1. getTagName : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getTagName : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo::getName &rarr; KILLED<br/>
+3. getTagName : mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getTagName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. getTagName : replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getTagName &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo.getName();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_69'/>
+69
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_69'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_70'/>
+70
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_70'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_71'/>
+71
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_71'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_72'/>
+72
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_72'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Returns first argument.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_73'/>
+73
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_73'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_74'/>
+74
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_74'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return the first argument. null if not set.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_75'/>
+75
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_75'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_76'/>
+76
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_76'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String getFirstArg() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_77'/>
+77
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_77'>3</a>
+<span>
+1. getFirstArg : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. getFirstArg : mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getFirstArg to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+3. getFirstArg : replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getFirstArg &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return firstArg;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_78'/>
+78
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_78'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_79'/>
+79
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_79'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_80'/>
+80
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_80'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_81'/>
+81
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_81'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Gets the line number.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_82'/>
+82
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_82'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_83'/>
+83
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_83'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return the line number</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_84'/>
+84
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_84'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_85'/>
+85
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_85'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getLineNo() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_86'/>
+86
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_86'>2</a>
+<span>
+1. getLineNo : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. getLineNo : replaced int return with 0 for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getLineNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return lineNo;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_87'/>
+87
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_87'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_88'/>
+88
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_88'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_89'/>
+89
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_89'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_90'/>
+90
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_90'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Gets column number.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_91'/>
+91
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_91'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_92'/>
+92
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_92'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return the column number</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_93'/>
+93
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_93'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_94'/>
+94
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_94'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public int getColumnNo() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_95'/>
+95
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_95'>2</a>
+<span>
+1. getColumnNo : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. getColumnNo : replaced int return with 0 for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getColumnNo &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return columnNo;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_96'/>
+96
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_96'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_97'/>
+97
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_97'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_98'/>
+98
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_98'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    @Override</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_99'/>
+99
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_99'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public String toString() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_100'/>
+100
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_100'>4</a>
+<span>
+1. toString : replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE<br/>
+2. toString : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo::getName &rarr; KILLED<br/>
+3. toString : mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED<br/>
+4. toString : replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::toString &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return &#34;JavadocTag[tag=&#39;&#34; + tagInfo.getName()</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_101'/>
+101
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_101'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                + &#34;&#39; lineNo=&#34; + lineNo</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_102'/>
+102
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_102'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                + &#34;, columnNo=&#34; + columnNo</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_103'/>
+103
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_103'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                + &#34;, firstArg=&#39;&#34; + firstArg + &#34;&#39;]&#34;;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_104'/>
+104
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_104'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_105'/>
+105
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_105'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_106'/>
+106
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_106'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_107'/>
+107
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_107'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that the tag is an &#39;return&#39; tag.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_108'/>
+108
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_108'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_109'/>
+109
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_109'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return whether the tag is an &#39;return&#39; tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_110'/>
+110
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_110'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_111'/>
+111
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_111'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isReturnTag() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_112'/>
+112
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_112'>5</a>
+<span>
+1. isReturnTag : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isReturnTag : negated conditional &rarr; KILLED<br/>
+3. isReturnTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. isReturnTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. isReturnTag : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isReturnTag &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo == JavadocTagInfo.RETURN;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_113'/>
+113
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_113'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_114'/>
+114
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_114'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_115'/>
+115
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_115'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_116'/>
+116
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_116'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that the tag is an &#39;param&#39; tag.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_117'/>
+117
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_117'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_118'/>
+118
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_118'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return whether the tag is an &#39;param&#39; tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_119'/>
+119
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_119'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_120'/>
+120
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_120'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isParamTag() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_121'/>
+121
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_121'>5</a>
+<span>
+1. isParamTag : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isParamTag : negated conditional &rarr; KILLED<br/>
+3. isParamTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. isParamTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. isParamTag : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isParamTag &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo == JavadocTagInfo.PARAM;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_122'/>
+122
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_122'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_123'/>
+123
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_123'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_124'/>
+124
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_124'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_125'/>
+125
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_125'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that the tag is an &#39;throws&#39; or &#39;exception&#39; tag.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_126'/>
+126
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_126'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_127'/>
+127
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_127'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return whether the tag is an &#39;throws&#39; or &#39;exception&#39; tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_128'/>
+128
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_128'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_129'/>
+129
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_129'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isThrowsTag() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_130'/>
+130
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_130'>8</a>
+<span>
+1. isThrowsTag : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isThrowsTag : negated conditional &rarr; KILLED<br/>
+3. isThrowsTag : negated conditional &rarr; KILLED<br/>
+4. isThrowsTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+5. isThrowsTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+6. isThrowsTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+7. isThrowsTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+8. isThrowsTag : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isThrowsTag &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo == JavadocTagInfo.THROWS</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_131'/>
+131
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_131'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>            || tagInfo == JavadocTagInfo.EXCEPTION;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_132'/>
+132
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_132'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_133'/>
+133
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_133'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_134'/>
+134
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_134'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_135'/>
+135
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_135'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that the tag is a &#39;see&#39; or &#39;inheritDoc&#39; tag.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_136'/>
+136
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_136'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_137'/>
+137
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_137'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return whether the tag is a &#39;see&#39; or &#39;inheritDoc&#39; tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_138'/>
+138
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_138'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_139'/>
+139
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_139'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isSeeOrInheritDocTag() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_140'/>
+140
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_140'>9</a>
+<span>
+1. isSeeOrInheritDocTag : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isSeeOrInheritDocTag : negated conditional &rarr; KILLED<br/>
+3. isSeeOrInheritDocTag : negated conditional &rarr; KILLED<br/>
+4. isSeeOrInheritDocTag : removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isInheritDocTag &rarr; KILLED<br/>
+5. isSeeOrInheritDocTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+6. isSeeOrInheritDocTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+7. isSeeOrInheritDocTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+8. isSeeOrInheritDocTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+9. isSeeOrInheritDocTag : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isSeeOrInheritDocTag &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo == JavadocTagInfo.SEE || isInheritDocTag();</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_141'/>
+141
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_141'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_142'/>
+142
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_142'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_143'/>
+143
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_143'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_144'/>
+144
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_144'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that the tag is a &#39;inheritDoc&#39; tag.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_145'/>
+145
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_145'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_146'/>
+146
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_146'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return whether the tag is a &#39;inheritDoc&#39; tag</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_147'/>
+147
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_147'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_148'/>
+148
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_148'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean isInheritDocTag() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_149'/>
+149
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_149'>5</a>
+<span>
+1. isInheritDocTag : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. isInheritDocTag : negated conditional &rarr; KILLED<br/>
+3. isInheritDocTag : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+4. isInheritDocTag : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+5. isInheritDocTag : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isInheritDocTag &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo == JavadocTagInfo.INHERIT_DOC;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_150'/>
+150
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_150'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_151'/>
+151
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_151'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_152'/>
+152
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_152'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_153'/>
+153
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_153'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Checks that the tag can contain references to imported classes.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_154'/>
+154
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_154'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     *</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_155'/>
+155
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_155'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return whether the tag can contain references to imported classes</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_156'/>
+156
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_156'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_157'/>
+157
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_157'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public boolean canReferenceImports() {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_158'/>
+158
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_158'>20</a>
+<span>
+1. canReferenceImports : replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE<br/>
+2. canReferenceImports : negated conditional &rarr; KILLED<br/>
+3. canReferenceImports : negated conditional &rarr; KILLED<br/>
+4. canReferenceImports : negated conditional &rarr; KILLED<br/>
+5. canReferenceImports : negated conditional &rarr; KILLED<br/>
+6. canReferenceImports : negated conditional &rarr; KILLED<br/>
+7. canReferenceImports : negated conditional &rarr; KILLED<br/>
+8. canReferenceImports : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+9. canReferenceImports : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+10. canReferenceImports : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+11. canReferenceImports : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+12. canReferenceImports : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+13. canReferenceImports : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+14. canReferenceImports : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+15. canReferenceImports : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+16. canReferenceImports : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+17. canReferenceImports : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+18. canReferenceImports : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+19. canReferenceImports : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+20. canReferenceImports : replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::canReferenceImports &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return tagInfo == JavadocTagInfo.SEE</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_159'/>
+159
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_159'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                || tagInfo == JavadocTagInfo.LINK</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_160'/>
+160
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_160'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                || tagInfo == JavadocTagInfo.VALUE</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_161'/>
+161
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_161'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                || tagInfo == JavadocTagInfo.LINKPLAIN</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_162'/>
+162
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_162'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                || tagInfo == JavadocTagInfo.THROWS</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_163'/>
+163
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_163'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>                || tagInfo == JavadocTagInfo.EXCEPTION;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_164'/>
+164
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_164'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_165'/>
+165
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_165'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_166'/>
+166
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_166'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_45'>45</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_45'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag</span></span> Removed assignment to member variable lineNo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_46'>46</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_46'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testToString</span></span> Removed assignment to member variable columnNo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_47'>47</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_47'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testToString</span></span> Removed assignment to member variable firstArg &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_48'>48</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_48'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo::fromName &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>&#60;init&#62;<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> Removed assignment to member variable tagInfo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_68'>68</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_68'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getTagName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testVersionRequired</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo::getName &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getTagName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testVersionRequired</span></span> mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getTagName to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getTagName<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>getTagName<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testVersionRequired</span></span> replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getTagName &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_77'>77</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_77'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getFirstArg<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag</span></span> mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getFirstArg to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getFirstArg<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>getFirstArg<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag</span></span> replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getFirstArg &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_86'>86</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_86'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getLineNo<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getLineNo<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag</span></span> replaced int return with 0 for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getLineNo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_95'>95</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_95'/> 
+
+<p class='NON_VIABLE'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>getColumnNo<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>getColumnNo<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag</span></span> replaced int return with 0 for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::getColumnNo &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_100'>100</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_100'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testToString</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTagInfo::getName &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testToString</span></span> mutated return of Object value for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::toString to ( if (x != null) null else throw new RuntimeException ) &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>none</span></span> replaced return of object reference value with [see docs for details] &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>toString<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testToString</span></span> replaced return value with &#34;&#34; for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::toString &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_112'>112</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_112'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isReturnTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testJava8ReceiverParameter</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isReturnTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testJava8ReceiverParameter</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isReturnTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testTags</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isReturnTag<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isReturnTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testTags</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isReturnTag &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_121'>121</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_121'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isParamTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testEclipse</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isParamTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isParamTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testEclipse</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isParamTag<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isParamTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testEclipse</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isParamTag &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_130'>130</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_130'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testWithoutLogErrors</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testTags</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testWithoutLogErrors</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>isThrowsTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isThrowsTag &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_140'>140</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_140'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testAllowMissingJavadocTags</span></span> removed call to com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isInheritDocTag &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testAllowMissingJavadocTags</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testTags</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>isSeeOrInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isSeeOrInheritDocTag &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_149'>149</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_149'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>isInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testInheritDoc</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>isInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testInheritDoc</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>isInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>isInheritDocTag<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>isInheritDocTag<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::isInheritDocTag &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@1c2ceac2_158'>158</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@1c2ceac2_158'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>4.<span><b>4</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>5.<span><b>5</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>6.<span><b>6</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> negated conditional &rarr; KILLED</p> <p class='KILLED'><span class='pop'>7.<span><b>7</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>8.<span><b>8</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>9.<span><b>9</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>10.<span><b>10</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>11.<span><b>11</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>12.<span><b>12</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>13.<span><b>13</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>14.<span><b>14</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>15.<span><b>15</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>16.<span><b>16</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>17.<span><b>17</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='KILLED'><span class='pop'>18.<span><b>18</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> removed conditional - replaced equality check with true &rarr; KILLED</p> <p class='NON_VIABLE'><span class='pop'>19.<span><b>19</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>none</span></span> replaced return of primitive boolean/byte/short/integer value with (x == 1) ? 0 : x + 1 &rarr; NON_VIABLE</p> <p class='KILLED'><span class='pop'>20.<span><b>20</b><br/><b>Location : </b>canReferenceImports<br/><b>Killed by : </b>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid</span></span> replaced boolean return with true for com/puppycrawl/tools/checkstyle/checks/javadoc/JavadocTag::canReferenceImports &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>CONSTRUCTOR_CALLS</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>EXPERIMENTAL_ARGUMENT_PROPAGATION</li>
+<li class='mutator'>EXPERIMENTAL_BIG_DECIMAL</li>
+<li class='mutator'>EXPERIMENTAL_BIG_INTEGER</li>
+<li class='mutator'>EXPERIMENTAL_MEMBER_VARIABLE</li>
+<li class='mutator'>EXPERIMENTAL_NAKED_RECEIVER</li>
+<li class='mutator'>EXPERIMENTAL_REMOVE_SWITCH_MUTATOR_[0-99]</li>
+<li class='mutator'>EXPERIMENTAL_RETURN_VALUES_MUTATOR</li>
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NEGATE_CONDITIONALS</li>
+<li class='mutator'>NON_VOID_METHOD_CALLS</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+<li class='mutator'>REMOVE_INCREMENTS</li>
+<li class='mutator'>RETURN_VALS</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testEclipse (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testExcludeScope (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.test11684082 (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testDontAllowUnusedParameterTag (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testPkg (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testWithoutLogErrors (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testTypeParameters (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testJavadocTypeRecordComponents2 (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testVersionRegularEx (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testAllowToSkipOverridden (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testAuthorRequired (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImports (0 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testDoAllowMissingJavadocTagsByDefault (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testJavadocTypeInterfaceMemberScopeIsPublic (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testInner (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testVersionRequired (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testAllowMissingTypeParameters (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testJavadocTypeRecordComponents (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testAllowUndocumentedParamsTags (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testStrictJavadoc (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testExtraThrows (14 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.test1379666 (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes2 (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.test11684083 (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testConstructor (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testThrowsDetection (10 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.test11684081 (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testAuthorRegularExError (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testToString (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testDefaultAccessModifier (6 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testVersionRegularExError (5 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagTest.testJavadocTagReferenceImportsInvalid (0 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testIgnoreThrows (41 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testJava8ReceiverParameter (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testTags (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testInheritDoc (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testRelaxedJavadoc (9 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testAuthorRegularEx (11 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testTypeParamsTags (4 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheckTest.testJavadocTypeRecords (3 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testScopes (8 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testJavadocMethodRecordsAndCompactCtors (10 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testAllowMissingJavadocTags (7 ms)</li><li>com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheckTest.testGenerics (13 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='http://pitest.org'>PIT</a> 1.9.3
+
+</body>
+</html>
